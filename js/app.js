@@ -1,3 +1,17 @@
+$(document).ready(function(){
+  $.each(restaurantes, function (index, restaurante){
+    $("<img>").attr("src", restaurante.image).appendTo(".img-area");
+  });
+});
+
+// $(document).ready(function() {
+//
+//   $.each(restaurantes, function (index, restaurante) {
+//     $("<img>").attr("src", restaurante.image).appendTo(".img-restaurant");
+// })
+// });
+
+
 var map;
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -15,10 +29,10 @@ var map;
     });
 
         // Create markers.
-        features.forEach(function(feature) {
-          var marker = new google.maps.Marker({
-            position: feature.position,
-            map: map
-          });
-        });
-      }
+  features.forEach(function(feature) {
+    var marker = new google.maps.Marker({
+      position: feature.position,
+        map: map
+      });
+    });
+  }
