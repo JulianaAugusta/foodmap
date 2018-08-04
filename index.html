@@ -13,7 +13,7 @@
   <body>
     <section class="container-fluid">
       <div class="row">
-        <div class="container-1 col-sm-12">
+        <div class="box-1 col-sm-12">
           <h1>Foodmap</h1>
         </div>
       </div>
@@ -21,20 +21,19 @@
 
     <section class="container-fluid">
       <div class="row">
-        <div class="container-2 col-sm-12">
+        <div class="box-2 col-sm-12">
           <h1>Foodmap</h1>
           <div id="map" style="height:400px; width:100%;"></div>
-          <h3>Comida perto de você</h3>
-          <select class="form-control form-control-lg">
-            <option>Árabe</option>
-            <option>Fastfood</option>
-            <option>Italiana</option>
-            <option>Vegana</option>
-            <option>Japonesa</option>
-          </select>
+          <label>Comida perto de você</label>
+          <input class="form-control" type="text" placeholder="Filtrar Restaurantes"/>
+          <button class="filtrar">Filtrar</button>
           <div class="img-area col-sm-12 col-md-12"></div>
         </div>
       </div>
+    </section>
+
+    <section class="container-fluid">
+      <div class="container-search"></div>
     </section>
 
     <!-- O script comentado é o do Google maps -->
@@ -45,7 +44,7 @@
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
     <script async defer
-   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZv8SB2m0MrKc__BPS6xFUPDr6muyObMg&callback=initMap">
-   </script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9SZlT7O4445aONtmXYCb0dcMR0cIS2ow&callback=initMap">
+    </script>
   </body>
 </html>
