@@ -3,6 +3,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Fresca', sans-serif;
 }
 
 .box-1,
@@ -15,13 +16,31 @@ html, body {
 }
 
 .box-1 {
-  background-color: red;
+  background-color: #FFA500;
 }
 
 .box-2 {
-  background-color: blue;
+  background-color: #FFA500;
   display: none;
   height: auto;
+}
+
+hr.style-three {
+height: 30px;
+border-style: solid;
+border-color: white;
+border-width: 1px 0 0 0;
+border-radius: 20px;
+}
+hr.style-three:before {
+display: block;
+content: "";
+height: 30px;
+margin-top: -31px;
+border-style: solid;
+border-color: white;
+border-width: 0 0 1px 0;
+border-radius: 20px;
 }
 
 img{
