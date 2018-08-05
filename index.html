@@ -33,15 +33,20 @@
           </div>
           <h4 class="text-light p-2">Comida perto de você:</h4>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Filtrar Restaurantes" aria-label="Recipient's username" aria-describedby="button-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-danger" type="button" id="button-addon2"><i class="icon-search text-light"></i></button>
-              </div>
+            <input type="text" class="form-control" id="user-input" placeholder="Filtrar Restaurantes por tipo" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-danger" type="button" id="filter-button"><i class="icon-search text-light"></i></button>
             </div>
-            <div class="row">
-              <div class="img-area col-sm-12 col-md-12 d-flex justify-content-between flex-wrap"></div>
-            </div>
-
+          </div>
+          <div class="row">
+            <div class="banana col-sm-12 col-md-12 p-3"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="h-100 justify-content-evenly bg-gradient-danger" id="container-img">
+          </div>
         </div>
       </div>
     </section>
@@ -49,6 +54,28 @@
     <section class="container-fluid">
       <div class="container-search"></div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="only-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content bg-danger text-white">
+            <div class="modal-header">
+              <div id="modal-restname">
+                <p>NOME</p>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body d-flex" id="modal-body">
+            <p>Foto e descrição</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-warning w-100">Peça Já!</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- O script comentado é o do Google maps -->
 

@@ -2,22 +2,30 @@ $(document).ready(function() {
   $('.box-2').delay('3000').fadeIn('slow')
 });
 
+$(document).ready(function () {
+
+  initMap();
+
+  restaurantes.forEach((restaurant, index) => {
+    $('#container-img').append('<img data-toggle="modal" data-target="#only-modal" data-whatever=' + restaurant.name + ' src=' + restaurant.image + ' id="pic-container' + index + '" class=' + restaurant.type + '>');
+    $('#pic-container' + index).on('click', function () {
+    $('#modal-restname').html('<h3 class="text-center">' + restaurant.name + '</h3>');
+    $('#modal-body').html('<img class="align-self-center" src=' + restaurant.image + ' height="150"><p class="mx-4">' + restaurant.description + '<p>');
+    });
+  });
+});
+
+
 $(document).ready(function() {
   $(".form-control").focusout(function(){
        var busca = $(this).val();
        restaurantes.map(function(r){
          if (busca === r.type){
-
-           console.log(r);
+           $('.banana').append('<img src=' + r.image + '>');
+            $("#container-img").hide();
          }
        })
    });
-});
-
-$(document).ready(function(){
-  $.each(restaurantes, function (index, restaurante){
-    $("<img>").attr("src", restaurante.image).appendTo(".img-area");
-  });
 });
 
 var map;
