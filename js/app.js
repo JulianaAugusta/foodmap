@@ -13,20 +13,48 @@ $(document).ready(function () {
     $('#modal-body').html('<img class="align-self-center" src=' + restaurant.image + ' height="150"><p class="mx-4">' + restaurant.description + '<p>');
     });
   });
+
+  // $('#filter-button').on('click', function () {
+  //   var userInput = $('#user-input').val();
+  //   $('#user-input').val('');
+  //   var count = 0;
+  //
+  //   restaurantes.forEach((restaurant, index) => {
+  //     if (userInput !== restaurant.name && userInput !== restaurant.type) {
+  //       $('#pic-container' + index).delay(1000).hide('slow');
+  //     } else {
+  //       $('#pic-container' + index).delay(1000).show('slow');
+  //       count += 1;
+  //     };
+  //   });
+  // });
 });
 
 
 $(document).ready(function() {
   $(".form-control").focusout(function(){
        var busca = $(this).val();
-       restaurantes.map(function(r){
-         if (busca === r.type){
-           $('.banana').append('<img src=' + r.image + '>');
-            $("#container-img").hide();
+       var count = 0;
+
+       restaurantes.map(function(r, index){
+             if (busca !== r.name && busca !== r.type) {
+               $('#pic-container' + index).delay(1000).hide('slow');
+             } else {
+               $('#pic-container' + index).delay(1000).show('slow');
+               count += 1;
+         // if (busca === r.type){
+         //   $('.banana').append('<img src=' + r.image + '>');
+         //    $("#container-img").hide();
          }
        })
    });
 });
+
+// $(document).ready(function(){
+//   $.each(restaurantes, function (index, restaurante){
+//     $("<img>").attr("src", restaurante.image).appendTo(".img-area");
+//   });
+
 
 var map;
   function initMap() {
