@@ -10,24 +10,9 @@ $(document).ready(function () {
     $('#container-img').append('<img data-toggle="modal" data-target="#only-modal" data-whatever=' + restaurant.name + ' src=' + restaurant.image + ' id="pic-container' + index + '" class=' + restaurant.type + '>');
     $('#pic-container' + index).on('click', function () {
     $('#modal-restname').html('<h3 class="text-center">' + restaurant.name + '</h3>');
-    $('#modal-body').html('<img class="align-self-center" src=' + restaurant.image + ' height="150"><p class="mx-4">' + restaurant.description + '<p>');
+    $('#modal-body').html('<img class="align-self-center" src=' + restaurant.image + ' height="110"><h5 class="mx-4">' + restaurant.description + '<h5>');
     });
   });
-
-  // $('#filter-button').on('click', function () {
-  //   var userInput = $('#user-input').val();
-  //   $('#user-input').val('');
-  //   var count = 0;
-  //
-  //   restaurantes.forEach((restaurant, index) => {
-  //     if (userInput !== restaurant.name && userInput !== restaurant.type) {
-  //       $('#pic-container' + index).delay(1000).hide('slow');
-  //     } else {
-  //       $('#pic-container' + index).delay(1000).show('slow');
-  //       count += 1;
-  //     };
-  //   });
-  // });
 });
 
 
@@ -39,22 +24,17 @@ $(document).ready(function() {
        restaurantes.map(function(r, index){
              if (busca !== r.name && busca !== r.type) {
                $('#pic-container' + index).delay(1000).hide('slow');
-             } else {
+             }
+             else if (busca === "") {
+
+             }
+             else {
                $('#pic-container' + index).delay(1000).show('slow');
                count += 1;
-         // if (busca === r.type){
-         //   $('.banana').append('<img src=' + r.image + '>');
-         //    $("#container-img").hide();
-         }
-       })
-   });
-});
-
-// $(document).ready(function(){
-//   $.each(restaurantes, function (index, restaurante){
-//     $("<img>").attr("src", restaurante.image).appendTo(".img-area");
-//   });
-
+             }
+           })
+         });
+       });
 
 var map;
   function initMap() {
