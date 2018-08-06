@@ -3,9 +3,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function () {
-
   initMap();
-
   restaurantes.forEach((restaurant, index) => {
     $('#container-img').append('<img data-toggle="modal" data-target="#only-modal" data-whatever=' + restaurant.name + ' src=' + restaurant.image + ' id="pic-container' + index + '" class=' + restaurant.type + '>');
     $('#pic-container' + index).on('click', function () {
@@ -15,26 +13,20 @@ $(document).ready(function () {
   });
 });
 
-
 $(document).ready(function() {
   $(".form-control").focusout(function(){
-       var busca = $(this).val();
-       var count = 0;
-
-       restaurantes.map(function(r, index){
-             if (busca !== r.name && busca !== r.type) {
-               $('#pic-container' + index).delay(1000).hide('slow');
-             }
-             else if (busca === "") {
-
-             }
-             else {
-               $('#pic-container' + index).delay(1000).show('slow');
-               count += 1;
-             }
-           })
-         });
-       });
+    var busca = $(this).val();
+    var count = 0;
+  restaurantes.map(function(r, index){
+    if (busca !== r.name && busca !== r.type) {
+      $('#pic-container' + index).delay(1000).hide('slow');
+      }else {
+        $('#pic-container' + index).delay(1000).show('slow');
+          count += 1;
+      }
+    })
+  });
+});
 
 var map;
   function initMap() {
